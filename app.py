@@ -261,7 +261,7 @@ def chat_view():
 
 def main():
     st.set_page_config(
-        page_title="Customer Support Bot with Memory",
+        page_title="Customer Support Bot",
         layout="wide",
         page_icon="💬",
     )
