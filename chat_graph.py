@@ -50,7 +50,6 @@ def build_chat_graph():
     model = _build_model()
 
     def call_model(state: ChatState, config: RunnableConfig) -> ChatState:
-        # The entire conversation (state["messages"]) is passed to the model.
         response = model.invoke(state["messages"], config=config)
         return {"messages": [response]}
 

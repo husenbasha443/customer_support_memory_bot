@@ -267,7 +267,7 @@ def main():
     )
     init_session_state()
 
-    # Dark-ish background styling to resemble the screenshot
+    # Dark-ish background
     st.markdown(
         """
         <style>

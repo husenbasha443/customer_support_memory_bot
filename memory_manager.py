@@ -16,8 +16,6 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker, Session
 
-
-# Ensure .env values are loaded even when this module is imported
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
@@ -101,7 +99,7 @@ def list_conversations(user_id: str) -> List[Dict[str, Any]]:
         )
         # Eagerly load messages for each conversation
         for conv in convs:
-            _ = conv.messages  # access relationship to ensure load
+            _ = conv.messages
         return [_to_conv_dict(conv) for conv in convs]
 
 
